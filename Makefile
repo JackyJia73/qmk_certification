@@ -24,9 +24,9 @@ ifeq ($(shell git rev-parse --is-inside-work-tree 2>/dev/null),)
     export NOT_REPO := yes
 endif
 
-ifdef SKIP_VERSION
+#ifdef SKIP_VERSION
     export SKIP_GIT := yes
-endif
+#endif
 
 ifndef SUB_IS_SILENT
 ifndef SKIP_GIT
