@@ -421,6 +421,15 @@ void shci_cmd_resp_wait(uint32_t timeout)
 }
 #endif
 
+#define HAL_USE_IPCC                        TRUE
+#define STM32_IPCC_C1_RX_HANDLER            VectorF0
+#define STM32_IPCC_C1_TX_HANDLER            VectorF4
+#define STM32_IPCC_C1_RX_NUMBER             44
+#define STM32_IPCC_C1_TX_NUMBER             45
+#define STM32_IPCC_C1_RX_IRQ_PRIORITY       10 /*0*/
+#define STM32_IPCC_C1_TX_IRQ_PRIORITY       10 /*1*/
+
+
 OSAL_IRQ_HANDLER(STM32_IPCC_C1_RX_HANDLER) {
   OSAL_IRQ_PROLOGUE();
 
