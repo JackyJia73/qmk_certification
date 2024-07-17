@@ -1,0 +1,8 @@
+
+# QUANTUM_LIB_SRC += uart.c
+UART_DRIVER_REQUIRED = yes
+MCU_LDSCRIPT = STM32F103xB
+
+DEFERRED_EXEC_ENABLE = yes
+
+SRC +=   ../common/smart_ble.c 

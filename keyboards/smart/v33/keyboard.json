@@ -1,0 +1,190 @@
+{
+    "keyboard_name": "V33",
+    "manufacturer": "SmartCloud",
+    "url": "www.i-game.tech",
+    "maintainer": "Jacky",
+    "processor": "STM32F103",
+    "bootloader": "stm32duino",
+    "usb": {
+        "vid": "0x28E9",
+        "pid": "0x3007",
+        "device_version": "1.0.1",
+        "no_startup_check": true
+    },
+    "diode_direction": "ROW2COL",
+
+    "matrix_pins": {
+        "rows": ["A0", "A1", "B2", "A4", "A3"],
+        "cols": ["B0","B4", "C13", "A7", "A6", "C15", "C14", "B5"]   
+    },
+
+    "features": {
+        "bootmagic": true,
+        "command": false,
+        "console": true,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true,
+        "rgblight": false,
+        "rgb_matrix":true,
+        "os_detection":true
+    },
+
+    "encoder": {
+        "rotary": [
+            { "pin_a": "B15", "pin_b": "B13" }
+        ]
+    },
+
+    "ws2812": {
+        "pin": "B8",
+        "driver": "pwm"
+      },
+    "rgb_matrix": {
+        "driver": "ws2812",
+        "animations": {
+            "solid_color":true,
+            "gradient_up_down": true,
+            "gradient_left_right": true,
+            "breathing": true,
+            "band_sat": true,
+            "band_val": true,
+            "band_pinwheel_sat": true,
+            "band_pinwheel_val": true,
+            "band_spiral_sat": true,
+            "band_spiral_val": true,
+            "cycle_all": true,
+            "cycle_left_right": true,
+            "cycle_up_down": true,
+            "cycle_out_in": true,
+            "cycle_out_in_dual": true,
+            "rainbow_moving_chevron": true,
+            "cycle_pinwheel": true,
+            "cycle_spiral": true,
+            "dual_beacon": true,
+            "rainbow_beacon": true,
+            "rainbow_pinwheels": true,
+            "hue_breathing": true,
+            "hue_pendulum": true,
+            "hue_wave": true,
+            "typing_heatmap": true,
+            "digital_rain": true,
+            "solid_reactive_simple": true,
+            "solid_reactive": true,
+            "solid_reactive_wide": true,
+            "solid_reactive_multiwide": true,
+            "solid_reactive_cross": true,
+            "solid_reactive_multicross": true,
+            "solid_reactive_nexus": true,
+            "solid_reactive_multinexus": true,
+            "splash": true,
+            "multisplash": true,
+            "solid_splash": true,
+            "solid_multisplash": true
+
+        },
+
+        "layout": [
+            { "flags": 4, "matrix": [0, 0], "x": 0, "y": 6 },//esc
+            { "flags": 4, "matrix": [0, 2], "x": 36, "y": 6 },//fn
+            { "flags": 4, "matrix": [0, 3], "x": 68, "y": 6 },//tab
+            { "flags": 4, "x": 88, "y": 0 },
+            { "flags": 4, "matrix": [0, 4], "x": 107, "y": 6 },//back
+            { "flags": 4, "matrix": [0, 5], "x": 152, "y": 6 },//prts
+            { "flags": 4, "matrix": [0, 6], "x": 188, "y": 6 },//scroll
+            { "flags": 4, "matrix": [0, 7], "x": 224, "y": 6 },//pause
+      
+            { "flags": 4, "matrix": [1, 6], "x": 224, "y": 20 },//pageup
+            { "flags": 4, "matrix": [1, 5], "x": 188, "y": 20 },//home
+            { "flags": 4, "matrix": [1, 4], "x": 152, "y": 20 },//insert
+            { "flags": 4, "matrix": [1, 3], "x": 107, "y": 20 },//-
+            { "flags": 4, "matrix": [1, 2], "x": 72, "y": 20 },//*
+            { "flags": 4, "matrix": [1, 1], "x": 36, "y": 20 },// /
+            { "flags": 4, "matrix": [1, 0], "x": 0, "y": 20 }, //num
+ 
+            { "flags": 4, "matrix": [2, 0], "x": 0, "y": 31 },//7
+            { "flags": 4, "matrix": [2, 1], "x": 36, "y": 31 },//8
+            { "flags": 4, "matrix": [2, 2], "x": 72, "y": 31 },//9
+            { "flags": 4, "matrix": [2, 3], "x": 107, "y": 37 },//+
+            { "flags": 4, "matrix": [2, 4], "x": 152, "y": 31 },//dele
+            { "flags": 4, "matrix": [2, 5], "x": 188, "y": 31 },//end
+            { "flags": 4, "matrix": [2, 6], "x": 224, "y": 31 },//pgdown
+  
+
+            { "flags": 4, "matrix": [3, 6], "x": 224, "y": 64},//right
+            { "flags": 4, "matrix": [3, 5], "x": 188, "y": 64 },//down
+            { "flags": 4, "matrix": [3, 4], "x": 152, "y": 64 },//left
+            { "flags": 4, "matrix": [3, 3], "x": 188, "y": 53 },//up
+            { "flags": 4, "matrix": [3, 2], "x": 72,"y": 42 },//6
+            { "flags": 4, "matrix": [3, 1], "x": 36, "y": 42 },//5
+            { "flags": 4, "matrix": [3, 0], "x": 0, "y": 42 },//4
+
+            { "flags": 4, "matrix": [4, 0], "x": 0, "y": 53  },//1
+            { "flags": 4, "matrix": [4, 1], "x": 36, "y": 53 },   //2        
+            { "flags": 4, "matrix": [4, 2], "x": 72, "y": 53 },//3
+            { "flags": 4, "matrix": [4, 3], "x": 107, "y": 59 },//enter
+            { "flags": 4, "matrix": [4, 4], "x": 72, "y": 64 },//`
+            { "flags": 4, "matrix": [4, 5], "x": 19, "y": 64 }//0
+
+        ]
+     },
+
+
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"matrix":[0, 0],"x": 0, "y": 0},
+                {"matrix":[0, 2],"x": 1, "y": 0},
+                {"matrix":[0, 3],"x": 2, "y": 0},
+                {"matrix":[0, 4],"x": 3, "y": 0},
+                {"matrix":[0, 5],"x": 4.5, "y": 0},
+                {"matrix":[0, 6],"x": 5.5, "y": 0},
+                {"matrix":[0, 7],"x": 6.5, "y": 0},
+
+               
+                {"matrix":[1, 0], "x": 0, "y": 1},
+                {"matrix":[1, 1],"x": 1, "y": 1},
+                {"matrix":[1, 2],"x": 2, "y": 1},
+                {"matrix":[1, 3], "x": 3, "y": 1},
+                {"matrix":[1, 4],"x": 4.5, "y": 1},
+                {"matrix":[1, 5],"x": 5.5, "y": 1},
+                {"matrix":[1, 6],"x": 6.5, "y": 1},
+    
+             
+                {"matrix":[2, 0], "x": 0,"y": 2},
+                {"matrix":[2, 1],"x": 1, "y": 2},
+                {"matrix":[2, 2], "x": 2, "y": 2},
+                {"matrix":[2, 3],"x": 3, "y": 2},
+                {"matrix":[2, 4],"x": 4.5, "y": 2.5},
+                {"matrix":[2, 5],"x": 5.5, "y": 2},
+                {"matrix":[2, 6], "x": 6.5, "y": 2},
+
+
+
+                {"matrix":[3, 0],"x": 0, "y": 3},
+                {"matrix":[3, 1],"x": 1, "y": 3},
+                {"matrix":[3, 2],"x": 2, "y": 3},
+                {"matrix":[3, 3],"x": 5.5, "y": 3},
+                {"matrix":[3, 4],"x": 4.5, "y": 3},
+                {"matrix":[3, 5],"x": 5.5, "y": 3},
+                {"matrix":[3, 6],"x": 6.5, "y": 3},
+
+
+             
+                {"matrix":[4, 0], "x": 0, "y": 4},
+                {"matrix":[4, 1],"x": 1, "y": 4},
+                {"matrix":[4, 2],"x": 2, "y": 4},
+                {"matrix":[4, 3],"x": 3, "y": 4.5},
+                {"matrix":[4, 4],"x": 0.5, "y": 5},
+                {"matrix":[4, 5],"x": 1.5, "y": 5}
+
+    
+
+            ]
+        }
+    }
+}
+
+
+
+
