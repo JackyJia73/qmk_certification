@@ -103,9 +103,21 @@ usbevent_t event_queue[USB_EVENT_QUEUE_SIZE];
 uint8_t    event_queue_head;
 uint8_t    event_queue_tail;
 
+void led_blink3(int t)
+{
+        for (uint8_t i=0;i<t;i++) {
+                palSetPad(GPIOB, 12);
+                chThdSleepMilliseconds(150);
+                palClearPad(GPIOB, 12);
+                chThdSleepMilliseconds(150);
+        }
+        chThdSleepMilliseconds(1000);
+}
+
 void usb_event_queue_init(void) {
     // Initialise the event queue
     memset(&event_queue, 0, sizeof(event_queue));
+
     event_queue_head = 0;
     event_queue_tail = 0;
 }

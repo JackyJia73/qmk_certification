@@ -134,13 +134,26 @@ void protocol_setup(void) {
     // TESTING
     // chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
 }
-
+void led_blink2(int t)
+{
+        for (uint8_t i=0;i<t;i++) {
+                palSetPad(GPIOB, 12);
+                chThdSleepMilliseconds(150);
+                palClearPad(GPIOB, 12);
+                chThdSleepMilliseconds(150);
+        }
+        chThdSleepMilliseconds(1000);
+}
 static host_driver_t *driver = NULL;
 
 void protocol_pre_init(void) {
     /* Init USB */
     usb_event_queue_init();
+    
+
+
     init_usb_driver(&USB_DRIVER);
+
 
 #ifdef MIDI_ENABLE
     setup_midi();

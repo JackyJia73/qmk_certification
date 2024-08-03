@@ -19,14 +19,14 @@ endif
 # Otherwise the [OK], [ERROR] and [WARN] messages won't be displayed correctly
 override SILENT := false
 
-ifeq ($(shell git rev-parse --is-inside-work-tree 2>/dev/null),)
+#ifeq ($(shell git rev-parse --is-inside-work-tree 2>/dev/null),)
     export SKIP_GIT := yes
     export NOT_REPO := yes
-endif
+#endif
 
-ifdef SKIP_VERSION
+#ifdef SKIP_VERSION
     export SKIP_GIT := yes
-endif
+#endif
 
 ifndef SUB_IS_SILENT
 ifndef SKIP_GIT

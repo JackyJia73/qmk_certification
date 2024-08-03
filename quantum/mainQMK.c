@@ -16,10 +16,6 @@
 
 #include "keyboard.h"
 
-#include "ch.h"
-#include "hal.h"
-
-
 void platform_setup(void);
 
 void protocol_setup(void);
@@ -34,15 +30,6 @@ void protocol_keyboard_task(void) {
     keyboard_task();
 }
 
-void led_blink(int t){
-    for (int i=0;i<t;i++) {
-      palSetPad(GPIOB, 12);
-      chThdSleepMilliseconds(250);
-      palClearPad(GPIOB, 12);
-      chThdSleepMilliseconds(250);
-    }
-    chThdSleepMilliseconds(1000);
-}
 /** \brief Main
  *
  * FIXME: Needs doc
@@ -50,47 +37,41 @@ void led_blink(int t){
 int main(void) __attribute__((weak));
 int main(void) {
     platform_setup();
-
-    led_blink(1);
     protocol_setup();
-    
     keyboard_setup();
-    
+
     protocol_pre_init();
     keyboard_init();
-
     protocol_post_init();
-    
 
-//     /* Main loop */
-//     while (true) {
-//         protocol_pre_task();
-//         protocol_keyboard_task();
-//         protocol_post_task();
+    /* Main loop */
+    while (true) {
+        protocol_pre_task();
+        protocol_keyboard_task();
+        protocol_post_task();
 
-// #ifdef RAW_ENABLE
-//         void raw_hid_task(void);
-//         raw_hid_task();
-// #endif
+#ifdef RAW_ENABLE
+        void raw_hid_task(void);
+        raw_hid_task();
+#endif
 
-// #ifdef CONSOLE_ENABLE
-//         void console_task(void);
-//         console_task();
-// #endif
+#ifdef CONSOLE_ENABLE
+        void console_task(void);
+        console_task();
+#endif
 
-// #ifdef QUANTUM_PAINTER_ENABLE
-//         // Run Quantum Painter task
-//         void qp_internal_task(void);
-//         qp_internal_task();
-// #endif
+#ifdef QUANTUM_PAINTER_ENABLE
+        // Run Quantum Painter task
+        void qp_internal_task(void);
+        qp_internal_task();
+#endif
 
-// #ifdef DEFERRED_EXEC_ENABLE
-//         // Run deferred executions
-//         void deferred_exec_task(void);
-//         deferred_exec_task();
-// #endif // DEFERRED_EXEC_ENABLE
+#ifdef DEFERRED_EXEC_ENABLE
+        // Run deferred executions
+        void deferred_exec_task(void);
+        deferred_exec_task();
+#endif // DEFERRED_EXEC_ENABLE
 
-//         housekeeping_task();
-//     }
+        housekeeping_task();
+    }
 }
-

@@ -1,0 +1,36 @@
+{
+    "manufacturer": "MMD",
+    "keyboard_name": "GD32L235-KEYBOARD",
+    "maintainer": "SmartCloud",
+    "board": "GD32L235R_EVAL",
+    "bootloader": "stm32-dfu",
+    "diode_direction": "ROW2COL",
+    "features": {
+        "bootmagic": false,
+        "console": false,
+        "extrakey": false,
+        "mousekey": false,
+        "nkro": false,
+        "rgb_matrix": false
+    },
+    "matrix_pins": {
+        "cols": ["A2"],
+        "rows": ["A0"]
+    },
+    "url": "www.i-chip.cn",
+    "usb": {
+        "device_version": "0.0.1",
+        "force_nkro": true,
+        "pid": "0x3021",
+        "vid": "0x28E9",
+        "no_startup_check": true,
+        "wait_for_enumeration": false
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"matrix": [0, 0], "x": 0, "y": 0}                
+            ]
+        }
+    }
+}
