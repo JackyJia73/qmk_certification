@@ -46,7 +46,7 @@
 #define GD32_IRC48M_ENABLED                TRUE
 #define GD32_IRC32K_ENABLED                TRUE
 #define GD32_HXTAL_ENABLED                 TRUE
-#define GD32_LXTAL_ENABLED                 TRUE
+#define GD32_LXTAL_ENABLED                 FALSE
 #define GD32_SCS                           RCU_CKSYSSRC_PLL
 #define GD32_PLLSEL                        RCU_PLLSRC_HXTAL
 #define GD32_PLLMF_VALUE                   RCU_PLL_MUL6
@@ -58,7 +58,7 @@
 #define GD32_I2S_CLOCK_REQUIRED            FALSE
 #define GD32_CKOUTSEL                      RCU_CKOUTSRC_NONE
 #define GD32_RTCSRC                        RCU_RTCSRC_NONE
-#define GD32_USBD_CLOCK_REQUIRED           FALSE
+#define GD32_USBD_CLOCK_REQUIRED           TRUE
 #define GD32_USBDCLK_SEL                   RCU_USBDSRC_PLL
 
 /*

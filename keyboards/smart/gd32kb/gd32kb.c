@@ -13,14 +13,14 @@ void keyboard_pre_init_kb(void) {
   // }
 
 
-        __set_CONTROL(0);
-        __set_MSP(*(__IO uint32_t *)0x1FFFD000);
-        __enable_irq();
+        // __set_CONTROL(0);
+        // __set_MSP(*(__IO uint32_t *)0x1FFFD000);
+        // __enable_irq();
 
-        typedef void (*BootJump_t)(void);
-        BootJump_t boot_jump = *(BootJump_t *)(0x1FFFD000 + 4);
-        boot_jump();
-        while (1)
-            ;
+        // typedef void (*BootJump_t)(void);
+        // BootJump_t boot_jump = *(BootJump_t *)(0x1FFFD000 + 4);
+        // boot_jump();
+        // while (1)
+        //     ;
     
 }
